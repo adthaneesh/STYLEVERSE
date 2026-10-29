@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STYLEVERSE | Discover Your Style</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            STYLE<span>VERSE</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="cart-button" onclick="viewCart()">
+            🛍️ Cart (<span id="cart-count">0</span>)
+        </button>
+
+    </header>
+
+
+    <!-- HOME SLIDE -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">THE NEW FASHION EXPERIENCE</p>
+
+            <h1>
+                Wear Your<br>
+                <span>Own Story.</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover fashion that matches your personality.
+                Explore your favourite styles in one place.
+            </p>
+
+            <a href="#categories" class="main-button">
+                EXPLORE COLLECTIONS →
+            </a>
+
+        </div>
+
+        <div class="hero-art">
+
+            <div class="fashion-circle">
+                <span>✦</span>
+                <h2>YOUR<br>STYLE</h2>
+                <p>YOUR RULES</p>
+            </div>
+
+            <div class="floating-tag">
+                NEW<br>COLLECTION
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORY SECTION -->
+
+    <section class="categories section" id="categories">
+
+        <p class="small-title">FIND YOUR STYLE</p>
+
+        <h2 class="section-title">
+            Explore Categories
+        </h2>
+
+        <p class="section-description">
+            One destination. Every version of you.
+        </p>
+
+        <div class="category-grid">
+
+            <button class="category-card men"
+                    onclick="showCategory('Men')">
+
+                <span class="category-number">01</span>
+                <span class="category-icon">👔</span>
+                <h3>MEN</h3>
+                <p>Everyday essentials</p>
+                <span class="category-link">EXPLORE →</span>
+
+            </button>
+
+
+            <button class="category-card women"
+                    onclick="showCategory('Women')">
+
+                <span class="category-number">02</span>
+                <span class="category-icon">👗</span>
+                <h3>WOMEN</h3>
+                <p>Made to stand out</p>
+                <span class="category-link">EXPLORE →</span>
+
+            </button>
+
+
+            <button class="category-card kids"
+                    onclick="showCategory('Kids')">
+
+                <span class="category-number">03</span>
+                <span class="category-icon">🧸</span>
+                <h3>KIDS</h3>
+                <p>Little fashion stars</p>
+                <span class="category-link">EXPLORE →</span>
+
+            </button>
+
+
+            <button class="category-card footwear"
+                    onclick="showCategory('Footwear')">
+
+                <span class="category-number">04</span>
+                <span class="category-icon">👟</span>
+                <h3>FOOTWEAR</h3>
+                <p>Step into style</p>
+                <span class="category-link">EXPLORE →</span>
+
+            </button>
+
+
+            <button class="category-card accessories"
+                    onclick="showCategory('Accessories')">
+
+                <span class="category-number">05</span>
+                <span class="category-icon">👜</span>
+                <h3>ACCESSORIES</h3>
+                <p>Complete your look</p>
+                <span class="category-link">EXPLORE →</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS SECTION -->
+
+    <section class="products section" id="products">
+
+        <p class="small-title">CURATED FOR YOU</p>
+
+        <h2 class="section-title">
+            Trending Products
+        </h2>
+
+        <p class="section-description">
+            Find your next favourite outfit.
+        </p>
+
+        <div class="filter-buttons">
+
+            <button class="filter active"
+                    onclick="filterProducts('All', this)">
+                All
+            </button>
+
+            <button class="filter"
+                    onclick="filterProducts('Men', this)">
+                Men
+            </button>
+
+            <button class="filter"
+                    onclick="filterProducts('Women', this)">
+                Women
+            </button>
+
+            <button class="filter"
+                    onclick="filterProducts('Kids', this)">
+                Kids
+            </button>
+
+            <button class="filter"
+                    onclick="filterProducts('Footwear', this)">
+                Footwear
+            </button>
+
+            <button class="filter"
+                    onclick="filterProducts('Accessories', this)">
+                Accessories
+            </button>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search shirts, dresses, jeans..."
+            >
+
+            <button onclick="searchProducts()">SEARCH</button>
+
+        </div>
+
+
+        <div class="product-grid" id="product-list">
+            <!-- JavaScript will display products here -->
+        </div>
+
+    </section>
+
+
+    <!-- SPECIAL OFFER SLIDE -->
+
+    <section class="offer-section">
+
+        <div>
+            <p class="small-title">A LITTLE SOMETHING FOR YOU</p>
+
+            <h2>
+                Your Style.<br>
+                Your Statement.
+            </h2>
+
+            <p>
+                Discover something new every time you visit.
+            </p>
+
+            <a href="#products" class="offer-button">
+                SHOP THE COLLECTION →
+            </a>
+        </div>
+
+        <div class="offer-symbol">
+            ✳
+        </div>
+
+    </section>
+
+
+    <!-- CHECKOUT SECTION -->
+
+    <section class="checkout section" id="contact">
+
+        <p class="small-title">ALMOST YOURS</p>
+
+        <h2 class="section-title">
+            Complete Your Order
+        </h2>
+
+        <p class="section-description">
+            Enter your details to prepare your order confirmation.
+        </p>
+
+        <div class="checkout-card">
+
+            <h3>Customer Details</h3>
+
+            <form id="checkout-form">
+
+                <label for="customer-name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="customer-phone">
+                    WhatsApp Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    placeholder="Example: +919876543210"
+                    required
+                >
+
+                <small>
+                    Include your country code, such as +91 for India.
+                </small>
+
+
+                <label for="customer-address">
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="customer-address"
+                    placeholder="Enter your delivery address"
+                    required
+                ></textarea>
+
+
+                <label class="consent-label">
+                    <input type="checkbox" id="whatsapp-consent" required>
+
+                    I agree to use my WhatsApp number for this
+                    order's confirmation message.
+                </label>
+
+
+                <div class="order-total">
+                    Total: ₹<span id="checkout-total">0</span>
+                </div>
+
+                <button type="submit" class="checkout-button">
+                    PREPARE WHATSAPP CONFIRMATION
+                </button>
+
+            </form>
+
+            <p class="checkout-note">
+                WhatsApp will open with a prepared message.
+                You must review and send it yourself.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <a href="#home" class="logo footer-logo">
+            STYLE<span>VERSE</span>
+        </a>
+
+        <p>Discover Your Style. Explore Your World.</p>
+
+        <p class="copyright">
+            © 2026 STYLEVERSE. Student Mini-Project.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
